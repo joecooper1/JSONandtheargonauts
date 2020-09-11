@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/JSONandtheargonauts/static/css/main.5f361e03.chunk.css",
-    "main.js": "/JSONandtheargonauts/static/js/main.d1199f4a.chunk.js",
-    "main.js.map": "/JSONandtheargonauts/static/js/main.d1199f4a.chunk.js.map",
+    "main.js": "/JSONandtheargonauts/static/js/main.c2c4448d.chunk.js",
+    "main.js.map": "/JSONandtheargonauts/static/js/main.c2c4448d.chunk.js.map",
     "runtime-main.js": "/JSONandtheargonauts/static/js/runtime-main.9d9a3182.js",
     "runtime-main.js.map": "/JSONandtheargonauts/static/js/runtime-main.9d9a3182.js.map",
     "static/js/2.bb749c34.chunk.js": "/JSONandtheargonauts/static/js/2.bb749c34.chunk.js",
     "static/js/2.bb749c34.chunk.js.map": "/JSONandtheargonauts/static/js/2.bb749c34.chunk.js.map",
     "index.html": "/JSONandtheargonauts/index.html",
-    "precache-manifest.0789d4f29f2038d14734391d20f51a51.js": "/JSONandtheargonauts/precache-manifest.0789d4f29f2038d14734391d20f51a51.js",
+    "precache-manifest.b9474eb7dd9a2a135983361372e436d2.js": "/JSONandtheargonauts/precache-manifest.b9474eb7dd9a2a135983361372e436d2.js",
     "service-worker.js": "/JSONandtheargonauts/service-worker.js",
     "static/css/main.5f361e03.chunk.css.map": "/JSONandtheargonauts/static/css/main.5f361e03.chunk.css.map",
     "static/js/2.bb749c34.chunk.js.LICENSE.txt": "/JSONandtheargonauts/static/js/2.bb749c34.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.9d9a3182.js",
     "static/js/2.bb749c34.chunk.js",
     "static/css/main.5f361e03.chunk.css",
-    "static/js/main.d1199f4a.chunk.js"
+    "static/js/main.c2c4448d.chunk.js"
   ]
 }
