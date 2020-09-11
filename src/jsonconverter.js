@@ -29,7 +29,7 @@ export default function JsonConverter() {
         console.log(category);
         const newCategory = [];
         for (let key in currentCategory) {
-          newCategory.push({ key: key, value: currentCategory[key] });
+          newCategory.push({ Key: key, Value: currentCategory[key] });
         }
         console.log(newCategory);
         newObj.docusignDetails[category] = newCategory;
