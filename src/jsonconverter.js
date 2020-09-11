@@ -20,11 +20,15 @@ export default function JsonConverter() {
       "AuxiliaryDetailsData",
       "MainDetailsData",
       "MeterDetailsData",
-      "UsageRatesData",
     ];
 
     for (let category in newObj.docusignDetails) {
-      if (categoriesToChange.includes(category)) {
+      //Get rid of usage rates
+      if (category === "UsageRatesData") {
+        newObj.docusignDetails[category] = [];
+      }
+      //Map keys and values
+      else if (categoriesToChange.includes(category)) {
         const currentCategory = newObj.docusignDetails[category];
         console.log(category);
         const newCategory = [];
