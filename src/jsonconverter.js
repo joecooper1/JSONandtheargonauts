@@ -2,10 +2,15 @@ import React, { useState } from "react";
 
 export default function JsonConverter() {
   const [inputValue, setInputValue] = useState("");
+  const [userEmailValue, setUserEmailValue] = useState("");
   const [outputValue, setOutputValue] = useState("");
 
   function changeInput(event) {
     setInputValue(event.target.value);
+  }
+
+  function changeEmailInput(event) {
+    setUserEmailValue(event.target.value);
   }
 
   function convertJson() {
@@ -27,13 +32,26 @@ export default function JsonConverter() {
       if (category === "UsageRatesData") {
         newObj.docusignDetails[category] = [];
       }
+      //If categoryis credentials
+      else if (category === "Credentials") {
+        newObj.docusignDetails[category] = {
+          Username: "webcrm.admin@udgroup.co.uk",
+          Password: "Utilities012",
+        };
+      }
       //Map keys and values
       else if (categoriesToChange.includes(category)) {
         const currentCategory = newObj.docusignDetails[category];
         console.log(category);
         const newCategory = [];
         for (let key in currentCategory) {
-          newCategory.push({ Key: key, Value: currentCategory[key] });
+          const newKey = key;
+          let newValue = currentCategory[key];
+          //Replace email addresses with user one
+          const email = RegExp('@', 'g')
+          if (email.test(newValue)) newValue = userEmailValue
+          //Push as Key and Value
+          newCategory.push({ Key: newKey, Value: newValue });
         }
         console.log(newCategory);
         newObj.docusignDetails[category] = newCategory;
@@ -61,22 +79,32 @@ export default function JsonConverter() {
           alignItems: "center",
         }}
       >
-        <br></br>
-
-        <input
-          type="text"
-          onChange={changeInput}
-          value={inputValue}
-          style={{
-            backgroundColor: "white",
-            height: "100px",
-            width: "300px",
-            wordWrap: "break-word",
-          }}
-        ></input>
-        <button onClick={convertJson} style={{ height: "50px" }}>
-          Convert
-        </button>
+        <div>
+          <input
+            type="text"
+            onChange={changeInput}
+            value={inputValue}
+            style={{
+              backgroundColor: "white",
+              height: "100px",
+              width: "300px",
+              wordWrap: "break-word",
+            }}
+          ></input>
+          <p>
+            Your email:
+            <input
+              type="text"
+              onChange={changeEmailInput}
+              value={userEmailValue}
+            ></input>
+          </p>
+        </div>
+        <div>
+          <button onClick={convertJson} style={{ height: "50px" }}>
+            Convert
+          </button>
+        </div>
         <br></br>
         <p
           style={{
