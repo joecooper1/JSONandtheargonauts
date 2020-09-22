@@ -25,6 +25,7 @@ export default function JsonConverter() {
       "AuxiliaryDetailsData",
       "MainDetailsData",
       "MeterDetailsData",
+      "UsageRatesData"
     ];
 
     for (let category in newObj.docusignDetails) {
@@ -33,7 +34,7 @@ export default function JsonConverter() {
       //  newObj.docusignDetails[category] = [];
       //}
       //If categoryis credentials
-      else if (category === "Credentials") {
+      if (category === "Credentials") {
         newObj.docusignDetails[category] = {
           Username: "webcrm.admin@udgroup.co.uk",
           Password: "Utilities012",
