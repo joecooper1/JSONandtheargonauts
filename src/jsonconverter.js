@@ -29,9 +29,9 @@ export default function JsonConverter() {
 
     for (let category in newObj.docusignDetails) {
       //Get rid of usage rates
-      if (category === "UsageRatesData") {
-        newObj.docusignDetails[category] = [];
-      }
+      //if (category === "UsageRatesData") {
+      //  newObj.docusignDetails[category] = [];
+      //}
       //If categoryis credentials
       else if (category === "Credentials") {
         newObj.docusignDetails[category] = {
@@ -48,8 +48,8 @@ export default function JsonConverter() {
           const newKey = key;
           let newValue = currentCategory[key];
           //Replace email addresses with user one
-          const email = RegExp('@', 'g')
-          if (email.test(newValue)) newValue = userEmailValue
+          const email = RegExp("@", "g");
+          if (email.test(newValue)) newValue = userEmailValue;
           //Push as Key and Value
           newCategory.push({ Key: newKey, Value: newValue });
         }
