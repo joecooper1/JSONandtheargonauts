@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b70f115ac1a7c857966fcabb48e37512",
+    "revision": "791ae81b7654bd888bb6990ad1474066",
     "url": "/JSONandtheargonauts/index.html"
   },
   {
-    "revision": "dd8b25e18f467824eb12",
+    "revision": "f929ddb0829919b867d6",
     "url": "/JSONandtheargonauts/static/css/main.5f361e03.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/JSONandtheargonauts/static/js/2.bb749c34.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "dd8b25e18f467824eb12",
-    "url": "/JSONandtheargonauts/static/js/main.e5ba83f2.chunk.js"
+    "revision": "f929ddb0829919b867d6",
+    "url": "/JSONandtheargonauts/static/js/main.07e28e75.chunk.js"
   },
   {
     "revision": "07850b144511aa328957",
