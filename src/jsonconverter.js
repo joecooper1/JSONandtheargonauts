@@ -25,7 +25,9 @@ export default function JsonConverter() {
       "AuxiliaryDetailsData",
       "MainDetailsData",
       "MeterDetailsData",
-      "UsageRatesData"
+      "UsageRatesData",
+      "DataFields",
+      "OverridableDataFields"
     ];
 
     for (let category in newObj.docusignDetails) {
@@ -56,6 +58,39 @@ export default function JsonConverter() {
         }
         console.log(newCategory);
         newObj.docusignDetails[category] = newCategory;
+      } else {
+        continue;
+      }
+    }
+
+    for (let category in newObj.contractDetails) {
+      //Get rid of usage rates
+      //if (category === "UsageRatesData") {
+      //  newObj.docusignDetails[category] = [];
+      //}
+      //If categoryis credentials
+      if (category === "Credentials") {
+        newObj.contractDetails[category] = {
+          Username: "webcrm.admin@udgroup.co.uk",
+          Password: "Utilities012",
+        };
+      }
+      //Map keys and values
+      else if (categoriesToChange.includes(category)) {
+        const currentCategory = newObj.contractDetails[category];
+        console.log(category);
+        const newCategory = [];
+        for (let key in currentCategory) {
+          const newKey = key;
+          let newValue = currentCategory[key];
+          //Replace email addresses with user one
+          const email = RegExp("@", "g");
+          if (email.test(newValue)) newValue = userEmailValue;
+          //Push as Key and Value
+          newCategory.push({ Key: newKey, Value: newValue });
+        }
+        console.log(newCategory);
+        newObj.contractDetails[category] = newCategory;
       } else {
         continue;
       }
